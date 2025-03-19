@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 react-gallery/vite.config.js
+react-gallery/src/config.js
 dist
 dist-ssr
 *.local
