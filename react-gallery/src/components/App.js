@@ -1,7 +1,8 @@
 const App=()=> {
     return(
+        <h1>Welcome from my app </h1>
 
-        <h1></h1>
+  
     )
 };
 
