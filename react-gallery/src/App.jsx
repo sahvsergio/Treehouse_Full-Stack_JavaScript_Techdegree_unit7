@@ -6,10 +6,10 @@ import apiKey from './config'
 
 
 
-function fetchData(query){
+function fetchData(query) {
   fetch(`https://pixabay.com/api/?key=${apiKey}&q=${query}&image_type=photo&`)
-  .then(response=>response.json())
-  .then(data=>console.log(data));
+    .then(response => response.json())
+    .then(data => console.log(data));
 
 
 };
@@ -17,15 +17,15 @@ fetchData('flower');
 
 function App() {
   const [count, setCount] = useState(0)
-  
+
 
   return (
-   <h1>Welcome to my app </h1>
+    <h1>Welcome to my app </h1>
 
-   
-    
-   
-   
+
+
+
+
   )
 }
 
