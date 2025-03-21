@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './assets/css/index.css'
 import App from './App.jsx'
 
-
 const SearchForm=()=>{
   return(
     <form class="search-form">
@@ -16,27 +15,29 @@ const SearchForm=()=>{
           </svg>
         </button>
       </form>
-  )
+  );
 }
 
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App>
-      <SearchForm/>
-</App>  </StrictMode>,
-)
-/*
-      
-      <nav class="main-nav">
+const Nav= ()=>{
+  return(
+   <nav class="main-nav">
         <ul>
           <li><a href='#'>Cats</a></li>
           <li><a href='#'>Dogs</a></li>
           <li><a href='#'>Computers</a></li>
         </ul>
       </nav>
-      
-      <div class="photo-container">
+  );
+}
+const Photo=()=>{
+
+  return(
+      <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" />
+  )
+}
+const PhotoList=()=>{
+
+  return( <div class="photo-container">
         <h2>Results</h2>
         <ul>
           <li>
@@ -51,10 +52,27 @@ createRoot(document.getElementById('root')).render(
           <li>
             <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
           </li>
-          <!-- Not Found -->
+        
           <li class="not-found">
             <h3>No Results Found</h3>
             <p>You search did not return any results. Please try again.</p>
           </li>
         </ul>
-      </div>*/
+      </div>
+      );
+}
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App>
+    <SearchForm></SearchForm>
+    
+    </App>
+    
+  
+  </StrictMode>,
+)
+
+      
+      
+     
