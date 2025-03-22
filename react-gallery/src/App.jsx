@@ -4,6 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import apiKey from './config'
 
+import SearchForm from './components/SearchForm';
+import Nav from './components/Nav';
+import PhotoList from './components/Photolist';
+import Photo from './components/Photo';
+
+
 
 
 function fetchData(query) {
@@ -15,12 +21,20 @@ function fetchData(query) {
 };
 fetchData('flower');
 
-function App() {
+const App=()=> {
+
   const [count, setCount] = useState(0)
 
 
   return (
-    <h1>Welcome to my app </h1>
+ 
+<>      {/* Add a */}
+    <SearchForm />
+    <Nav />
+    <PhotoList />
+    </>
+
+    
 
 
 
