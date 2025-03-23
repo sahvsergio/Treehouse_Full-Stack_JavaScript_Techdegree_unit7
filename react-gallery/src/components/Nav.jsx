@@ -1,5 +1,8 @@
+import React from 'react';
+import { useState, useEffect, } from 'react'
 const Nav = () => {
     return (
+            
         <nav className="main-nav">
             <ul>
                 <li><a href='#'>Cats</a></li>

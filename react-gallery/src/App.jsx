@@ -9,21 +9,22 @@ import Nav from './components/Nav';
 import PhotoList from './components/Photolist';
 import Photo from './components/Photo';
 
-
+const myKey=apiKey;
 
 
 function fetchData(query) {
-  fetch(`https://pixabay.com/api/?key=${apiKey}&q=${query}&image_type=photo&`)
+  fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
     .then(response => response.json())
     .then(data => console.log(data));
 
 
 };
-fetchData('flower');
+
 
 const App=()=> {
+  
 
-  const [count, setCount] = useState(0)
+ 
 
 
   return (
