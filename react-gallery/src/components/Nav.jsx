@@ -7,11 +7,13 @@ import { NavLink } from 'react-router-dom';
 
 
 
-import fetchData from  '../App'
 
 
-const Nav = () => {
+
+const Nav = (props) => {
+    console.log(props);
     return (
+        
             
         <nav className="main-nav">
             <ul>

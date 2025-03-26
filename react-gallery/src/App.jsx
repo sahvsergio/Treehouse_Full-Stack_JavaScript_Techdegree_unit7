@@ -13,7 +13,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import SearchForm from './components/SearchForm';
 import Nav from './components/Nav';
-import PhotoList from './components/Photolist';
+import PhotoList from './components/PhotoList';
 import Photo from './components/Photo';
 
 
@@ -40,6 +40,7 @@ function fetchData(query) {
 
 
 const App=()=> {
+ 
 
 
 
@@ -47,13 +48,13 @@ const App=()=> {
 
   return (
 <>
-<Nav/>     
+<Nav func={fetchData}/>     
 
 <Routes>
 
         <Route path='/*' element={<SearchForm />}/>
         <Route index element={<Navigate replace to='/cats'/>}/>
-        <Route path='dogs'/>   
+        <Route index element={<Navigate replace to='dogs'/> }/>  
         <Route path='/computers'/>   
 </Routes>
 
