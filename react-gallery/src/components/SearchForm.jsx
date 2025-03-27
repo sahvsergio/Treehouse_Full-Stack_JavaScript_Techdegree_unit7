@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import fetchData from '../App'
+import PhotoList from './PhotoList'
+
 
 const SearchForm = (props) => {
     const[ value, setValue]=useState("")
@@ -7,13 +8,21 @@ const SearchForm = (props) => {
 
    const handleSubmit=(event)=>{
     event.preventDefault();
-    props.fetchData(value);
+    setValue(value);
+    
+    
+    
+
+    
+
+
 
 
    }
+   console.log()
     return (
         <form className="search-form" onSubmit={(event)=>handleSubmit(event)}>
-            {console.log(value)}
+           
             <input 
             type="search" 
             name="search" 
@@ -31,6 +40,7 @@ const SearchForm = (props) => {
                 </svg>
             </button>
         </form>
+    
     );
 }
 export default SearchForm;

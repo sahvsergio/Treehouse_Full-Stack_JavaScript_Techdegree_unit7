@@ -17,19 +17,21 @@ import PhotoList from './components/PhotoList';
 import Photo from './components/Photo';
 
 
+function fetchData(query) {
+  fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
+    .then(response => console.log(response.json()))
+    
+
+
+};
 
 
 
 const myKey=apiKey;
 
 
-function fetchData(query) {
-  fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
-    .then(response => response.json())
-    .then(data => console.log(data));
 
 
-};
 {/*
     / - Home route: when visiting the home route, the user should be redirected to the first static route.
     3 static routes for default topics, for example /cats, /dogs and /computers. These will be used in the navigation component, feel free to customize these topics. These should render the PhotoList component.
@@ -40,22 +42,23 @@ function fetchData(query) {
 
 
 const App=()=> {
- 
-
-
-
-
+  let dogData= fetchData('dogs');
+  let catData=fetchData('cats');
+  let computerData=fetchData('computers');
 
   return (
 <>
-<Nav func={fetchData}/>     
+      <Nav />
+      <SearchForm/>
 
 <Routes>
+        
+      
 
-        <Route path='/*' element={<SearchForm />}/>
-        <Route index element={<Navigate replace to='/cats'/>}/>
-        <Route index element={<Navigate replace to='dogs'/> }/>  
-        <Route path='/computers'/>   
+        <Route path='/' element={<PhotoList  /> }/>
+        <Route path='/cats' element={<PhotoList data={catData}/>} />
+        <Route path='dogs' element={<PhotoList  />}/>  
+        <Route path='/computers' element={<PhotoList  />} />   
 </Routes>
 
 
