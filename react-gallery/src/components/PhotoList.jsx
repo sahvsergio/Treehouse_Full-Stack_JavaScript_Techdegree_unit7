@@ -1,9 +1,34 @@
 import React from 'react'
-import Phot from './Photo'
+import Photo from './Photo'
 
 
-const PhotoList =  (data)=>{
+const PhotoList =  ({data})=>{
+    data.then(images=>()=>{
+        for (let i=0;i<images.length;i++){
+
+            let imageURL=images[i].pageURL;
+            { console.log(imageURL) }
+        }
+    })
+
     
+   
+   
+
+            
+
+
+
+
+   
+
+
+    
+
+    
+
+    
+   
     
     return (<div className="photo-container">
         <h2>Results</h2>

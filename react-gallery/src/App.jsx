@@ -18,12 +18,12 @@ import Photo from './components/Photo';
 
 
 function fetchData(query) {
-  return fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
+ return fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
     .then(data => data.json())
-
-}
-
-
+    .then(data => data.hits)
+    
+    
+  }
 const myKey = apiKey;
 
 
@@ -46,11 +46,14 @@ const App = () => {
     setQuery(newQuery);
   }
 
+ 
+  
+const data=fetchData(query);
 
   return (
 
     <>
-      {console.log({ query })}
+      
 
       <Nav getQuery={getQuery} />
       <SearchForm getQuery={getQuery} />
@@ -59,10 +62,10 @@ const App = () => {
 
 
 
-        <Route path='/' element={<PhotoList />} />
-        <Route path='/cats' element={<PhotoList data={'cats'} />} />
-        <Route path='/dogs' element={<PhotoList query='dogs'/>} />
-        <Route path='/computers' element={<PhotoList query={query}/>} />
+        <Route path='/' element={<PhotoList data={data} />} />
+        <Route path='/cats' element={<PhotoList data={data} />} />
+        <Route path='/dogs' element={<PhotoList data={data}/>} />
+        <Route path='/computers' element={<PhotoList data={data}/>} />
       </Routes>
     </>
 
