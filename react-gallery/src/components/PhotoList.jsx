@@ -2,17 +2,9 @@ import React from 'react'
 import Phot from './Photo'
 
 
-const PhotoList =  ()=>{
-    
-
-        
-        
-      
-
+const PhotoList =  (data)=>{
     
     
-   
-
     return (<div className="photo-container">
         <h2>Results</h2>
      

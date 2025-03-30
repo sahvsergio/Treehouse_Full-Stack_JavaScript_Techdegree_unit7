@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 
 
-import { BrowserRouter} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 
 import viteLogo from '/vite.svg'
@@ -19,14 +19,12 @@ import Photo from './components/Photo';
 
 function fetchData(query) {
   return fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
-    .then(data=>data.json())
+    .then(data => data.json())
 
 }
 
 
-
-
-const myKey=apiKey;
+const myKey = apiKey;
 
 
 
@@ -40,42 +38,35 @@ const myKey=apiKey;
 */}
 
 
-const App=()=> {
-  const [query, setQuery]=useState("");
+const App = () => {
+  const [query, setQuery] = useState("");
 
-  
-  const getQuery=(newQuery)=>{
+
+  const getQuery = (newQuery) => {
     setQuery(newQuery);
   }
- 
- 
 
-    
-
-
-
- 
 
   return (
-   
+
     <>
       {console.log({ query })}
-   
-      <Nav />
-      <SearchForm getQuery={getQuery}/>
 
-<Routes>
-        
-      
+      <Nav getQuery={getQuery} />
+      <SearchForm getQuery={getQuery} />
 
-        <Route path='/' element={<PhotoList  /> }/>
-        <Route path='/cats' element={<PhotoList/> } />
-        <Route path='dogs' element={<PhotoList data={fetchData} />}/>  
-        <Route path='/computers' element={<PhotoList data={ fetchData}/>} />   
-</Routes>
-</>
+      <Routes>
 
-    
+
+
+        <Route path='/' element={<PhotoList />} />
+        <Route path='/cats' element={<PhotoList data={'cats'} />} />
+        <Route path='/dogs' element={<PhotoList query='dogs'/>} />
+        <Route path='/computers' element={<PhotoList query={query}/>} />
+      </Routes>
+    </>
+
+
 
 
 

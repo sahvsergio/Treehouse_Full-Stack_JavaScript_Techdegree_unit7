@@ -8,19 +8,24 @@ import { NavLink } from 'react-router-dom';
 
 
 
-
-
 const Nav = (props) => {
-  
-    return (
+    let handleClick=(event)=>{
+       
+       
+        let category=event.target.textContent.toLowerCase()
+        props.getQuery(category);
         
-            
-        <nav className="main-nav">
+        }
+
+
+    return (
+    <nav className="main-nav">
             <ul>
-                <li><NavLink to='/cats'>Cats</NavLink></li>
-                <li><NavLink to='/dogs'>Dogs</NavLink></li>
-                <li><NavLink to='/computers'>Computers</NavLink></li>
+                <li><NavLink to='/cats'onClick={handleClick}>Cats</NavLink></li>
+                <li><NavLink to='/dogs' onClick={handleClick}>Dogs</NavLink></li>
+                <li><NavLink to='/computers'onClick={handleClick}>Computers</NavLink></li>
             </ul>
+
         </nav>
 
     );
