@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Nav = (props) => {
-    console.log(props);
+  
     return (
         
             
