@@ -3,39 +3,14 @@ import Photo from './Photo'
 
 
 const PhotoList =  ({data})=>{
-    data.then(images=>()=>{
-        for (let i=0;i<images.length;i++){
-
-            let imageURL=images[i].pageURL;
-            { console.log(imageURL) }
-        }
-    })
-
-    
    
-   
-
-            
-
-
-
-
-   
-
-
-    
-
-    
-
-    
-   
-    
     return (<div className="photo-container">
         <h2>Results</h2>
+        
      
         
-        <ul>
-         
+        <ul>    
+         data?
                      <li className="not-found">
                 <h3>No Results Found</h3>
                 <p>You search did not return any results. Please try again.</p>
