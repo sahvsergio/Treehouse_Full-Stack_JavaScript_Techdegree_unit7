@@ -5,7 +5,7 @@ import Photo from './Photo'
 const PhotoList =  (props)=>{
    const results=[props.data];
   {console.log(results)}
-   let photosData=results.map(photo=><Photo url={photo.pageURL}/>);
+   let photosData=results.map(photo=><Photo url={photo.pageURL}key={photo.id}/>);
   
  
 
@@ -14,10 +14,10 @@ const PhotoList =  (props)=>{
    return (<div className="photo-container">
         <h2>Results</h2>
         <ul> 
-           <li key={photosData.i}>
+        
                {photosData}
            
-           </li>
+        
             
            
           
