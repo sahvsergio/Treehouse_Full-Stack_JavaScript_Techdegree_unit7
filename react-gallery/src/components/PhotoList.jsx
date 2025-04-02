@@ -1,11 +1,21 @@
 import React from 'react'
 import Photo from './Photo'
+import NoPhoto from './NoPhoto'
 
 
 const PhotoList = props => {
     const results = props.data;
+
+    let photosData;
+    if (results.length>0){
+
+        photosData = results.map(photo => <Photo url={photo.previewURL} key={photo.id} />);
+    }
+    else{
+        photosData=<NoPhoto/>;
+    }
     { console.log(results) }
-    let photosData = results.map(photo => <Photo url={photo.previewURL} key={photo.id} />);
+   
 
 
 
@@ -18,10 +28,7 @@ const PhotoList = props => {
     
       
         
-        < li className="not-found">
-            <h3>No Results Found</h3>
-            <p>You search did not return any results. Please try again.</p>
-      </li>
+       
     
              
         </ul>
