@@ -35,13 +35,13 @@ const App = () => {
     return fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
       .then(response => response.json())
       .then(responseData => responseData.hits)
-      .then(imageData=>setImages(imageData));
+      .then(imageData => setImages(imageData));
 
 
 
 
   }
-  
+
 
 
 
@@ -49,16 +49,16 @@ const App = () => {
   const getQuery = (newQuery) => {
     setQuery(newQuery);
   }
-  
-  
- 
- 
+
+
+
+
 
   useEffect(() => {
-    setImages(fetchData(query));
-    }
+    fetchData(query);
+  }
 
-  ,[query])
+    , [query])
 
 
 
@@ -66,8 +66,8 @@ const App = () => {
   return (
 
     <>
-  
-     
+
+
 
       <Nav getQuery={getQuery} />
       <SearchForm getQuery={getQuery} />
@@ -80,15 +80,15 @@ const App = () => {
 */}
 
       <Routes>
-        
+
 
 
 
 
         <Route path='/' element={<PhotoList data={images} />} />
         <Route path='/cats' element={<PhotoList data={images} />} />
-        <Route path='/dogs' element={<PhotoList data={images}/>} />
-        <Route path='/computers' element={<PhotoList data={images}/>} />
+        <Route path='/dogs' element={<PhotoList data={images} />} />
+        <Route path='/computers' element={<PhotoList data={images} />} />
         <Route path='/search/:query' element={<PhotoList data={images} />} />
       </Routes>
     </>

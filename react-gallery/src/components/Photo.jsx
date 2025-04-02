@@ -1,11 +1,15 @@
 import React from 'react';
 
 const Photo = props => {
-    
 
-    return(
-        <img src={props.pageURL}alt="" />
+
+    return (
+        <li>
+       
+        <img src={props.url} alt="" />
+        </li>
     )
+     
 }
 
 
