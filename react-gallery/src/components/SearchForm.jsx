@@ -1,10 +1,13 @@
 import React,{useState} from 'react';
+import {useParams} from 'react-router-dom';
 import PhotoList from './PhotoList'
+
 
 
 
 const SearchForm =(props) => {
     const[ value, setValue]=useState("")
+ 
 
 
    const handleSubmit=(event)=>{
@@ -14,7 +17,7 @@ const SearchForm =(props) => {
 }
 return (
         <form className="search-form" onSubmit={(event)=>handleSubmit(event)}>
-           {console.log(value)}
+         
             <input 
             type="search" 
             name="search" 

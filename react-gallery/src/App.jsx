@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 
 
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter,useParams } from 'react-router-dom'
+
 
 
 import viteLogo from '/vite.svg'
@@ -15,6 +16,7 @@ import SearchForm from './components/SearchForm';
 import Nav from './components/Nav';
 import PhotoList from './components/PhotoList';
 import Photo from './components/Photo';
+import NotFound from './components/NotFound';
 const myKey = apiKey;
 
 
@@ -97,8 +99,7 @@ const App = () => {
     / - Home route: when visiting the home route, the user should be redirected to the first static route.
     3 static routes for default topics, for example /cats, /dogs and /computers. These will be used in the navigation component, feel free to customize these topics. These should render the PhotoList component.
     /search/:query - route to handle user search queries. This should render the PhotoList component.
-    Use <NavLink> components in your Nav component for the 3 default topics.
-    The current route should always be reflected in the URL.
+   
 */}
 
       <Routes>
@@ -111,8 +112,10 @@ const App = () => {
         <Route path='/cats' element={<PhotoList data={images} />} />
         <Route path='/dogs' element={<PhotoList data={images} />} />
         <Route path='/computers' element={<PhotoList data={images} />} />
-        <Route path='/search/:query' element={<PhotoList data={images} />} />
-      </Routes>
+        <Route path='/search/' element={<PhotoList data={images} />} />
+        <Route path='/search/:query' element={<PhotoList data={images} query={query} />} />
+        <Route path='*' element={<NotFound/>}/>
+     </Routes>
     </>
 
 
