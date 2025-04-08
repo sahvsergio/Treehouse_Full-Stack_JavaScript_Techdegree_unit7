@@ -28,6 +28,7 @@ const myKey = apiKey;
 
 
 const App = () => {
+  
 
   {/*
     Setting inital states for pictures and query variables
@@ -84,6 +85,7 @@ const App = () => {
 
 
 
+
   return (
 
     <>
@@ -103,18 +105,13 @@ const App = () => {
 */}
 
       <Routes>
-
-
-
-
-
         <Route path='/' element={<PhotoList data={images} />} />
         <Route path='/cats' element={<PhotoList data={images} />} />
         <Route path='/dogs' element={<PhotoList data={images} />} />
         <Route path='/computers' element={<PhotoList data={images} />} />
         <Route path='/search/' element={<PhotoList data={images} />} />
-        <Route path='/search/:query' element={<PhotoList data={images} query={query} />} />
-        <Route path='*' element={<NotFound/>}/>
+        <Route path='/search/:query' element={<PhotoList data={images}/>} />
+        <Route path='*'element={<NotFound/>}/>
      </Routes>
     </>
 

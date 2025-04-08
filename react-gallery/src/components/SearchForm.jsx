@@ -1,18 +1,25 @@
 import React,{useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import PhotoList from './PhotoList'
 
 
 
 
 const SearchForm =(props) => {
+    
+
     const[ value, setValue]=useState("")
+    let navigate=useNavigate();
+    
  
 
 
    const handleSubmit=(event)=>{
     event.preventDefault();
     props.getQuery(value);
+    let path=`search/${value}`;
+    navigate(path)
+    
 
 }
 return (
