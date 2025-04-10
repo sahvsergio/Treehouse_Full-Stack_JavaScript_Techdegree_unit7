@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 
 
-import { BrowserRouter, useParams } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate, useParams, useNavigate } from 'react-router-dom'
 
 
 
@@ -10,7 +10,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import apiKey from './config'
 
-import { Route, Routes, Navigate } from 'react-router-dom';
+ 
 
 import SearchForm from './components/SearchForm';
 import Nav from './components/Nav';
