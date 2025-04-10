@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-
-
-import { BrowserRouter, Route, Routes, Navigate, useParams, useNavigate } from 'react-router-dom'
 
 
 
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes, Navigate} from 'react-router-dom'
+
+
+
+
 import './App.css'
 import apiKey from './config'
 
