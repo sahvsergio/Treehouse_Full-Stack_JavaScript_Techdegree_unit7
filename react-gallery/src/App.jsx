@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 
 
-import { BrowserRouter,useParams } from 'react-router-dom'
+import { BrowserRouter, useParams } from 'react-router-dom'
 
 
 
@@ -28,7 +28,7 @@ const myKey = apiKey;
 
 
 const App = () => {
-  
+
 
   {/*
     Setting inital states for pictures and query variables
@@ -53,7 +53,7 @@ const App = () => {
       .then(responseData => responseData.hits)
       .then(imageData => setImages(imageData));
 
-}
+  }
 
 
 
@@ -64,8 +64,8 @@ const App = () => {
 */}
 
   const getQuery = (newQuery) => {
-  
-   
+
+
     setQuery(newQuery);
   }
 
@@ -105,14 +105,16 @@ const App = () => {
 */}
 
       <Routes>
-        <Route path='/' element={<PhotoList data={images} />} />
-        <Route path='/cats' element={<PhotoList data={images} />} />
+        <Route path='/' element={<Navigate to='/cats' />} />
+        <Route path='/cats' element={<PhotoList data={images}  />} />
         <Route path='/dogs' element={<PhotoList data={images} />} />
         <Route path='/computers' element={<PhotoList data={images} />} />
-        <Route path='/search/' element={<PhotoList data={images} />} />
+
+
+        <Route path='/search/' element={<PhotoList data={images} />}/>
         <Route path='/search/:query' element={<PhotoList data={images}/>} />
-        <Route path='*'element={<NotFound/>}/>
-     </Routes>
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </>
 
 
