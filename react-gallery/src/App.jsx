@@ -37,6 +37,9 @@ const App = () => {
   const [query, setQuery] = useState("");
 
   const [images, setImages] = useState([]);
+  const [dogImages, setDogImages] = useState([]);
+  const [catImages, setCatImages] = useState([]);
+  const [computerImages, setComputerImages] = useState([]);
 
   {/*
    Function definition to fetch data from apy
@@ -51,7 +54,24 @@ const App = () => {
     return fetch(`https://pixabay.com/api/?key=${myKey}&q=${query}&image_type=photo&`)
       .then(response => response.json())
       .then(responseData => responseData.hits)
-      .then(imageData => setImages(imageData));
+      .then(imageData => {if(query==='cats'){
+        setCatImages(imageData)
+      }
+      else if(query==='dogs'){
+        setDogImages(imageData)
+      }
+      else if(query==='computers'){
+        setComputerImages(imageData)
+      }
+      else{
+        setImages(imageData)
+      }
+
+    }
+      
+      
+      
+      );
 
   }
 
@@ -77,7 +97,11 @@ const App = () => {
 */}
 
   useEffect(() => {
-    fetchData(query);
+    fetchData(query)
+    fetchData('cats');
+    fetchData('dogs');
+    fetchData('computers');
+   
   }
 
     , [query])
@@ -106,9 +130,9 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Navigate to='/cats' />} />
-        <Route path='/cats' element={<PhotoList data={images}  />} />
-        <Route path='/dogs' element={<PhotoList data={images} />} />
-        <Route path='/computers' element={<PhotoList data={images} />} />
+        <Route path='/cats' element={<PhotoList data={catImages}  />} />
+        <Route path='/dogs' element={<PhotoList data={dogImages} />} />
+        <Route path='/computers' element={<PhotoList data={computerImages} />} />
 
 
         <Route path='/search/' element={<PhotoList data={images} />}/>

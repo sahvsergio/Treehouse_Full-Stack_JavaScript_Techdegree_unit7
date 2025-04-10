@@ -5,6 +5,7 @@ import NoPhoto from './NoPhoto'
 
 
 const PhotoList = props => {
+    props
     
     const results = props.data;
    
