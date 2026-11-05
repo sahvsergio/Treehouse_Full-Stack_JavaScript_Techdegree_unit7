@@ -1,2 +1,10 @@
 # React Gallery App
-React
+
+## Project description
+## Features
+## Installation
+## Usage
+## Technologies
+- React
+## Screenshots
+## Demo link
